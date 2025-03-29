@@ -13,26 +13,18 @@
                 ],
                 "summary": "Get bookings",
                 "operationId": "cb034e58acd2845154758efb3c226376",
-                "requestBody": {
-                    "description": "Booking data",
-                    "required": true,
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "required": [
-                                    "resource_id"
-                                ],
-                                "properties": {
-                                    "resource_id": {
-                                        "type": "integer",
-                                        "example": 1
-                                    }
-                                },
-                                "type": "object"
-                            }
+                "parameters": [
+                    {
+                        "name": "resource_id",
+                        "in": "path",
+                        "description": "resource_id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
                         }
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful operation",
@@ -350,7 +342,7 @@
                                     "properties": {
                                         "message": {
                                             "type": "string",
-                                            "example": "The name field must be at least 3\n     *     characters."
+                                            "example": "Booking not found"
                                         },
                                         "errors": {
                                             "type": "object"
